@@ -4,7 +4,15 @@ const express = require('express');
 
 const app = express();
 
-app.use((req, res, next) => {});
+app.use((req, res, next) => {
+    console.log("In the middleware !")
+    next(); //Allows the request to continue to next middleware in line
+});
+
+app.use((req, res, next) => {
+    console.log("In the middleware ! 2")
+    next();
+});
 
 const server = http.createServer(app);
 
