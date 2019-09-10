@@ -11,7 +11,7 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     console.log("In the middleware ! 2")
-    next();
+    res.send("<h1>Test</h1>");
 });
 
 const server = http.createServer(app);
