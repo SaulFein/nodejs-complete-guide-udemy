@@ -10,7 +10,14 @@ const rootDir = require('../util/path');
 
 router.get('/', (req, res, next) => {
     const products =  adminData.products;
-    res.render('shop', {pageTitle: 'Shop', prods: products, path: '/'});
+    res.render('shop', {
+        pageTitle: 'Shop', 
+        prods: products, 
+        path: '/', 
+        hasProducts: products.length > 0,
+        activeShop: true,
+        productsCSS: true
+    });
 });
 
 
